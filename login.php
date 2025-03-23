@@ -42,20 +42,104 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+<<<<<<< HEAD
         body { font-family: Arial, sans-serif; margin: 50px; }
         .container { max-width: 400px; margin: 0 auto; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; }
         .form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
         .error { color: red; margin-bottom: 15px; }
+=======
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 50px; 
+            background-color: #d5e1df; /* Updated background color */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+        .container { 
+            max-width: 400px; 
+            width: 100%; 
+            padding: 20px; 
+            background-color: #fff; /* White background for the form container */
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            text-align: center; 
+        }
+        .logo { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #4CAF50; /* Green color for the logo */
+            margin-bottom: 20px; 
+        }
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+        }
+        .form-group input { 
+            width: 100%; 
+            padding: 8px; 
+            box-sizing: border-box; 
+            background-color: #b5e7a0; /* Updated input field background color */
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+        .error { 
+            color: red; 
+            margin-bottom: 15px; 
+            text-align: center; 
+        }
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+        button:hover { 
+            background-color: #45a049; 
+        }
+        p { 
+            text-align: center; 
+            margin-top: 15px; 
+        }
+        a { 
+            color: #4CAF50; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+>>>>>>> front-end
     </style>
 </head>
 <body>
     <div class="container">
+<<<<<<< HEAD
         <h2>Login</h2>
         <?php if ($error): ?>
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
+=======
+        <!-- Logo -->
+        <div class="logo">DevOps Task Manager</div>
+
+        <!-- Error Message -->
+        <?php if ($error): ?>
+            <div class="error"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <!-- Login Form -->
+>>>>>>> front-end
         <form method="POST" action="">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -67,7 +151,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit">Login</button>
         </form>
+<<<<<<< HEAD
         <p>Don't have an account? <a href="register.php">Register here</a></p>
     </div>
 </body>
 </html>
+=======
+
+        <!-- Registration Link -->
+        <p>Don't have an account? <a href="register.php">Register here</a></p>
+    </div>
+</body>
+</html>
+>>>>>>> front-end
