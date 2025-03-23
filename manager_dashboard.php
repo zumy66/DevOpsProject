@@ -65,16 +65,76 @@ if (isset($_GET['delete_user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 50px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .task, .user { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
-        .task h3, .user h3 { margin: 0; }
-        .task p, .user p { margin: 5px 0; }
-        .task .status { color: green; font-weight: bold; }
-        .task .actions a, .user .actions a { margin-right: 10px; text-decoration: none; color: blue; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 50px; 
+            background-color: #d5e1df; /* Updated background color */
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #fff; /* White background for the container */
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .task, .user { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            margin-bottom: 10px; 
+            border-radius: 5px; 
+            background-color: #f9f9f9; /* Light background for tasks and users */
+        }
+        .task h3, .user h3 { 
+            margin: 0; 
+        }
+        .task p, .user p { 
+            margin: 5px 0; 
+        }
+        .task .status { 
+            color: green; 
+            font-weight: bold; 
+        }
+        .task .actions a, .user .actions a { 
+            margin-right: 10px; 
+            text-decoration: none; 
+            color: blue; 
+        }
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+        }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; 
+            padding: 8px; 
+            box-sizing: border-box; 
+            background-color: #b5e7a0; /* Updated input field background color */
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+        button { 
+            padding: 10px 15px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+        button:hover { 
+            background-color: #45a049; 
+        }
+        a { 
+            color: #4CAF50; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
     </style>
 </head>
 <body>
