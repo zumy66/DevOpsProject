@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <!-- Logo -->
-        <div class="logo">DevOps Task Manager</div>
+        <div class="logo">DevOps Task Manager (V1.00) </div>
 
         <!-- Error Message -->
         <?php if ($error): ?>
