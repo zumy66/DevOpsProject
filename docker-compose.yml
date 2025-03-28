@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8081:80"  # Map host port 8081 to container port 80
+    volumes:
+      - ./src:/var/www/html  # Mount your PHP files
+    environment:
+      - APACHE_DISABLE_REUSE=off  # Prevent port conflicts
+      - DB_HOST=db  # Database hostname
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "Jan@20182019"  # Your root password
+      MYSQL_DATABASE: "task_manager"  # Auto-creates database
+      MYSQL_INITDB_SKIP_TZINFO: 1  # Speeds up initialization
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persistent database storage
+      - ./docker-entrypoint-initdb.d/task_manager.sql:/docker-entrypoint-initdb.d/init.sql  # Your SQL file
+    ports:
+      - "3306:3306"  # Expose MySQL port (optional)
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pJan@20182019"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  mysql_data:  # Named volume for database persistence
+    driver: local
+
+networks:
+  app-network:  # Dedicated network for containers
+    driver: bridge
